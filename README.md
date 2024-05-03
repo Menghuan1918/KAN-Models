@@ -5,3 +5,4 @@ Using the [pykan package](https://github.com/KindXiaoming/pykan)
 
 ## Working
 [Initial attempts at MNIST](./MNIST/MINST.md)
+- Currently it is only processed by simply expanding it into one dimension, which achieves 83 % accuracy
