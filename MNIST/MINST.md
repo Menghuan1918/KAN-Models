@@ -10,3 +10,5 @@ Test accuracy: 82.29%
 ```
 
 > Please follow the pykan installation guide. And the versoin of `torchvision` is 0.17.2
+
+![Output](https://github.com/Menghuan1918/KAN-Models/assets/122662527/c8d90c75-f73d-4f6e-b858-4c44239c5193)
