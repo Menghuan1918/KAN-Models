@@ -52,6 +52,7 @@ scheduler=lr_scheduler.CosineAnnealingLR(optimizer,T_max=num,eta_min=0)
 
 best_acc = 0
 avg_loss_list = []
+acc_list = []
 for epoch in range(num):
     model.train()
     avg_loss = 0
@@ -79,12 +80,21 @@ for epoch in range(num):
     acc = correct / total
     if acc > best_acc:
         best_acc = acc
+    acc_list.append(acc)
     print(f"Epoch: {epoch}, Loss: {avg_loss}, Accuracy: {acc}")
 print(f"Best Accuracy: {best_acc}")
 
 import matplotlib.pyplot as plt
-plt.plot(avg_loss_list)
-plt.xlabel("Iteration")
-plt.ylabel("Loss")
-plt.title("Loss Curve")
-plt.savefig("Normal_CNN_loss_curve.png")
+fig, ax1 = plt.subplots()
+color = 'tab:red'
+ax1.set_xlabel('Epoch')
+ax1.set_ylabel('Loss', color=color)
+ax1.plot(avg_loss_list, color=color)
+ax1.tick_params(axis='y', labelcolor=color)
+ax2 = ax1.twinx()
+color = 'tab:blue'
+ax2.set_ylabel('Accuracy', color=color)
+ax2.plot(acc_list, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+fig.tight_layout()
+plt.savefig("CNN.png")
