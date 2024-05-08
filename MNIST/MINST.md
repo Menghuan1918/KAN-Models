@@ -1,14 +1,15 @@
-# Simple.py
+# Simple way
 
 Just simply flattening the entire image into vectors (dropping the spatial information altogether) before applying the KANs network takes roughly, 30s to train on a CUDA device and yields about **83%** accuracy.
 
-```bash
-> /home/menghuan/miniconda3/envs/kan/bin/python /home/menghuan/Code/KAN/MINST.py
-Using cuda device
-train loss: 8.09e-01 | test loss: 7.75e-01 | reg: 7.38e+02 : 100%|██| 50/50 [00:38<00:00,  1.28it/s]
-Test accuracy: 82.29%
-```
+See [Simple.md](MNIST/Simple/Simple.md) for more.
 
-> Please follow the pykan installation guide. And the versoin of `torchvision` is 0.17.2
+# Replace the linear
 
-![Output](https://github.com/Menghuan1918/KAN-Models/assets/122662527/c8d90c75-f73d-4f6e-b858-4c44239c5193)
+Replace the linear function in a normal CNN network. Let's call the modified network KAN_CNN, we get:
+
+| Accuracy | CNN | KAN_CNN |
+| --- | --- | --- |
+| 15 epochs | 0.9922 | 0.9917 |
+
+See [KAN_CNN.md](MNIST/Replace_linear/KAN_CNN.md) for more.
